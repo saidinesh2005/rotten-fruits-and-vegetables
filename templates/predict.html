@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriGaze - Predict</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #000814;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      font-weight: 500;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 1.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+      position: relative;
+    }
+
+    nav ul li:hover {
+      color: #ee4266;
+    }
+
+    nav ul li.active {
+      color: #ee4266;
+      font-weight: 600;
+    }
+
+    nav ul li.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #ee4266;
+      border-radius: 2px;
+    }
+
+    /* Main content */
+    main {
+      max-width: 600px;
+      margin: 100px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 500;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    label {
+      font-weight: 500;
+      color: #555;
+      font-size: 1rem;
+      margin-right: 10px;
+    }
+
+    input[type="file"] {
+      font-size: 1rem;
+      padding: 6px 8px;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 40px;
+      background-color: #2a9d8f;
+      color: white;
+      border: none;
+      padding: 12px 40px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: #21867a;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      main {
+        margin: 80px 15px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">NUTRIGAZE</div>
+    <ul>
+      <li><a href="index.html" style="color: inherit; text-decoration: none;">Home</a></li>
+      <li><a href="about.html" style="color: inherit; text-decoration: none;">About</a></li>
+      <li class="active">Predict</li>
+      <li><a href="contact.html" style="color: inherit; text-decoration: none;">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Image Classification</h1>
+    <form action="#" method="POST" enctype="multipart/form-data">
+      <label for="imageUpload">Upload Your Image :</label>
+      <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required />
+      <br />
+      <button type="submit">predict</button>
+    </form>
+  </main>
+</body>
+</html>
